@@ -1,0 +1,81 @@
+<header>
+    <img (click)="dashboard()" src="assets/images/dashboard.png" alt="">
+</header>
+<div class="aboutus">
+    <div class="aboutUs-field">
+        <div class="form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <input type="text" placeholder="Lead" name="lead" id="lead" formControlName="lead">
+                <select formControlName="organisation">
+                    <option *ngFor="let data of org" [ngValue]="data.organisation">{{data.organisation}}</option>
+                </select>
+                <select formControlName="division">
+                    <option *ngFor="let data of division" [ngValue]="data.division">{{data.division}}</option>
+                </select>
+                <input type="text" placeholder="Instagram Handle" name="instagram" id="instagram"
+                    formControlName="instagram">
+                <input type="text" placeholder="Country" name="country" id="country" formControlName="country">
+                <input type="text" placeholder="City" name="city" id="city" formControlName="city">
+                <input type="text" placeholder="Primary Contact" name="contact" id="contact" formControlName="contact">
+                <input type="number" [class.invalid]="f.phone.invalid" placeholder="Phone" name="phone" id="phone"
+                    formControlName="phone">
+                <input type="text" placeholder="Alternate Contact" name="alternatecontact" id="alternatecontact"
+                    formControlName="alternatecontact">
+                <input type="number" [class.invalid]="f.alternatephone.invalid" placeholder="Phone"
+                    name="alternatephone" id="alternatephone" formControlName="alternatephone">
+                <input type="email" [class.invalid]="f.email.invalid" placeholder="Email" name="email" id="email"
+                    formControlName="email">
+                <input type="text" placeholder="Address Line 1" name="addressline1" id="addressline1"
+                    formControlName="addressline1">
+                <input type="text" placeholder="Address Line 2" name="addressline2" id="addressline2"
+                    formControlName="addressline2">
+                <input type="text" placeholder="PIN Code" name="pincode" id="pincode" formControlName="pincode">
+                <input type="text" placeholder="GSTIN" name="gstin" id="gstin" formControlName="gstin">
+                <input type="text" placeholder="TAN" name="TAN" id="TAN" formControlName="tan">
+                <input type="text" placeholder="PAN" name="PAN" id="PAN" formControlName="pan">
+                <input type="text" placeholder="Company Name" name="CompanyName" id="CompanyName"
+                    formControlName="companyname">
+                <select formControlName="year">
+                    <option *ngFor="let data of year" [ngValue]="data.year">{{data.year}}</option>
+                </select>
+                <select formControlName="source">
+                    <option *ngFor="let data of source" [ngValue]="data.source">{{data.source}}</option>
+                </select>
+                <select formControlName="setuptype">
+                    <option *ngFor="let data of setup" [ngValue]="data.setup">{{data.setup}}</option>
+                </select>
+                <select formControlName="rentaltype">
+                    <option *ngFor="let data of rental" [ngValue]="data.rental">{{data.rental}}</option>
+                </select>
+                <input type="text" placeholder="Transaction Rate" name="Transaction Rate" id="TransactionRate"
+                    formControlName="transactionrate">
+                <select formControlName="status">
+                    <option *ngFor="let data of status" [ngValue]="data.status">{{data.status}}</option>
+                </select>
+                <select formControlName="feedback">
+                    <option *ngFor="let data of feedback" [ngValue]="data.feedback">{{data.feedback}}</option>
+                </select>
+                <input type="text" placeholder="Feedback Date" name="Feedback Date" id="FeedbackDate"
+                    formControlName="feedbackdate">
+                <input type="text" placeholder="Initial Setup" name="Initial Setup" id="InitialSetup"
+                    formControlName="initialsetup">
+                <input type="text" placeholder="Basic Rental" name="Basic Rental" id="BasicRental"
+                    formControlName="basicrental">
+                <input type="text" placeholder="Additional Rent" name="Additional Rent" id="AdditionalRent"
+                    formControlName="additionalrent">
+                <select formControlName="subscriptiontype">
+                    <option *ngFor="let data of subscription" [ngValue]="data.subscription">{{data.subscription}}
+                    </option>
+                </select>
+                <select formControlName="hostingtype">
+                    <option *ngFor="let data of hosting" [ngValue]="data.hosting">{{data.hosting}}</option>
+                </select>
+                <div class="checkbox">
+                    <input type="checkbox" placeholder="TransferClients" name="TransferClients" id="TransferClients" />
+                    <label for="TransferClients">TransferClients</label>
+                </div>
+                <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

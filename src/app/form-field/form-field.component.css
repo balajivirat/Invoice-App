@@ -1,0 +1,106 @@
+header{
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: #fff;
+    box-shadow: -1px -1px 7px;
+}
+header img{
+    height: 80%;
+    cursor: pointer;
+}
+header h1{
+    cursor: pointer;
+    font-weight: lighter;
+    color: cadetblue;
+}
+.aboutus{
+    background-color: #f4f5f8;
+    height: 270vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(270deg,#25c481, #25b7c4);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.aboutUs-field{
+    width: 66%;
+    height: 80%;
+    background-color: #fff;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 4%;
+    top: 7%;
+}
+.form{
+    display: flex;
+    flex-wrap: wrap;
+}
+input{
+    width: 47%;
+    margin-right: 2%;
+    height: 50px;
+    border: 1px solid #d5d6de;
+    color: #000000;
+    margin-bottom: 30px;
+    border-width: 0;
+    border-bottom-width: 1px;
+    outline: none;
+}
+button{
+    border: 1px solid lightgray;
+    background: none;
+    font-size: 15px;
+    height: 57px;
+    width: 145px;
+    color: white;
+    background: linear-gradient(270deg,#25c481, #25b7c4);
+    margin-left: 40%;
+}
+select{
+    width: 47%;
+    margin-right: 2%;
+    height: 50px;
+    border: 1px solid #d5d6de;
+    color: #000000;
+    margin-bottom: 30px;
+    border-width: 0;
+    border-bottom-width: 1px;
+    outline: none;
+}
+.checkbox {
+    width: 50%;
+    display: flex;
+    align-items: flex-end;
+    float: right;
+    height: 50px;
+  }
+  .checkbox label {
+    margin: 0;
+    margin-left: 10px;
+  }
+  
+  input:focus::placeholder {
+    color: #161616;
+    transform: translateY(-20px);
+    transition: all 0.5s ease-out;
+  }
+  .checkbox input{
+    width: 10%; margin: 0; height: 20px
+  }
+  .invalid {
+    color: red;
+  }
+  button:disabled {
+    opacity: 0.5;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }

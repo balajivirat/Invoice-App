@@ -1,0 +1,149 @@
+<header>
+  <img (click)="form()" src="assets/images/form.png" alt="">
+</header>
+<section>
+  <table>
+    <tr>
+      <th>Lead</th>
+      <th>Organisation</th>
+      <th>Division</th>
+      <th>Instagram Handle</th>
+      <th>Country</th>
+      <th>City</th>
+      <th>Primary Contact</th>
+      <th>Phone</th>
+      <th>Alternate Contact</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Address Line 1</th>
+      <th>Address Line 2</th>
+      <th>PIN Code</th>
+      <th>GSTIN</th>
+      <th>TAN</th>
+      <th>PAN</th>
+      <th>Company Name</th>
+      <th>Year</th>
+      <th>Source</th>
+      <th>Setup Type</th>
+      <th>Rental Type</th>
+      <th>Transaction Rate</th>
+      <th>Status</th>
+      <th>Feedback</th>
+      <th>Feedback Date</th>
+      <th>Initial Setup</th>
+      <th>Basic Rental</th>
+      <th>Additional Rent</th>
+      <th>Subscription Type</th>
+      <th>Hosting Type</th>
+      <th>Transfer to Prospective Clients</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    <tr *ngFor="let list of data">
+      <td>{{list.lead}}</td>
+      <td>{{list.organisation}}</td>
+      <td>{{list.division}}</td>
+      <td>{{list.instagram}}</td>
+      <td>{{list.country}}</td>
+      <td>{{list.city}}</td>
+      <td>{{list.contact}}</td>
+      <td>{{list.phone}}</td>
+      <td>{{list.alternatecontact}}</td>
+      <td>{{list.alternatephone}}</td>
+      <td>{{list.email}}</td>
+      <td>{{list.addressline1}}</td>
+      <td>{{list.addressline2}}</td>
+      <td>{{list.pincode}}</td>
+      <td>{{list.gstin}}</td>
+      <td>{{list.tan}}</td>
+      <td>{{list.pan}}</td>
+      <td>{{list.companyname}}</td>
+      <td>{{list.year}}</td>
+      <td>{{list.source}}</td>
+      <td>{{list.setuptype}}</td>
+      <td>{{list.rentaltype}}</td>
+      <td>{{list.transactionrate}}</td>
+      <td>{{list.status}}</td>
+      <td>{{list.feedback}}</td>
+      <td>{{list.feedbackdate}}</td>
+      <td>{{list.initialsetup}}</td>
+      <td>{{list.basicrental}}</td>
+      <td>{{list.additionalrent}}</td>
+      <td>{{list.subscription}}</td>
+      <td>{{list.hosting}}</td>
+      <td>{{list.transferclients}}</td>
+      <td><button (click)="edit(list._id)">Edit</button></td>
+      <td><button (click)="delete(list._id)">Delete</button></td>
+    </tr>
+  </table>
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div>
+
+            <form class="form" name="updatedata" #updatedata="ngForm" (ngSubmit)="update();">
+              <div *ngFor="let data of filterdata">
+
+                <input type="text" placeholder="Lead" name="lead" [(ngModel)]='data.lead'>
+                <input type="text" placeholder="Organisation" name="organisation" [(ngModel)]='data.organisation'>
+                <input type="text" placeholder="Division" name="division" [(ngModel)]='data.division'>
+                <input type="text" placeholder="Instagram Handle" name="instagram" [(ngModel)]='data.instagram'>
+                <input type="text" placeholder="Country" name="country" [(ngModel)]='data.country'>
+                <input type="text" placeholder="City" name="city" [(ngModel)]='data.city'>
+                <input type="text" placeholder="Primary Contact" name="contact" [(ngModel)]='data.contact'>
+                <input type="number" placeholder="Phone" name="phone" id="phone" [(ngModel)]='data.phone'>
+                <input type="text" placeholder="Alternate Contact" name="alternatecontact"
+                  [(ngModel)]='data.alternatecontact'>
+                <input type="number" placeholder="Phone" name="alternatephone" [(ngModel)]='data.alternatephone'>
+                <input type="email" placeholder="Email" name="email" [(ngModel)]='data.email'>
+                <input type="text" placeholder="Address Line 1" name="addressline1" [(ngModel)]='data.addressline1'>
+                <input type="text" placeholder="Address Line 2" name="addressline2" [(ngModel)]='data.addressline2'>
+                <input type="text" placeholder="PIN Code" name="pincode" [(ngModel)]='data.pincode'>
+                <input type="text" placeholder="GSTIN" name="gstin" [(ngModel)]='data.gstin'>
+                <input type="text" placeholder="TAN" name="TAN" [(ngModel)]='data.tan'>
+                <input type="text" placeholder="PAN" name="PAN" [(ngModel)]='data.pan'>
+                <input type="text" placeholder="Company Name" name="CompanyName" [(ngModel)]='data.companyname'>
+                <input type="text" placeholder="Year" name="Year" [(ngModel)]='data.year'>
+                <input type="text" placeholder="Source" name="Source" [(ngModel)]='data.source'>
+                <input type="text" placeholder="Setup Type" name="SetupType" [(ngModel)]='data.setuptype'>
+                <input type="text" placeholder="Rental Type" name="RentalType" [(ngModel)]='data.rentaltype'>
+                <input type="text" placeholder="Transaction Rate" name="Transaction Rate"
+                  [(ngModel)]='data.transactionrate'>
+                <input type="text" placeholder="Status" name="Status" [(ngModel)]='data.status'>
+                <input type="text" placeholder="Feedback" name="Feedback" [(ngModel)]='data.feedback'>
+                <input type="text" placeholder="Feedback Date" name="Feedback Date" [(ngModel)]='data.feedbackdate'>
+                <input type="text" placeholder="Initial Setup" name="Initial Setup" [(ngModel)]='data.initialsetup'>
+                <input type="text" placeholder="Basic Rental" name="Basic Rental" [(ngModel)]='data.basicrental'>
+                <input type="text" placeholder="Additional Rent" name="Additional Rent"
+                  [(ngModel)]='data.additionalrent'>
+                <input type="text" placeholder="Subscription Type" name="Subscription Type"
+                  [(ngModel)]='data.subscriptiontype'>
+                <input type="text" placeholder="Hosting Type" name="Hosting Type" [(ngModel)]='data.hostingtype'>
+                <input type="checkbox" placeholder="TransferClients" name="TransferClients"
+                  [(ngModel)]='data.transferclients'>
+                <button type="submit">Submit</button>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
